@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cout << "./program arg1" << std::endl;
+		std::cout << "./program arg 1" << std::endl;
 		return 1;
 	}
 	try{

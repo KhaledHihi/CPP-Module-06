@@ -13,6 +13,19 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other)
 
 ScalarConverter::~ScalarConverter(){}
 
+void	helper(std::string literal)
+{
+	std::string val;
+	if (literal == "-inff" || literal == "-inf")
+		val = "-inf";
+	else if (literal == "+inff" || literal == "+inf")
+		val = "+inf";
+	else if (literal == "nanf" || literal == "nan")
+		val = "nan";
+	std::cout << "float: " << val << 'f' << std::endl;
+	std::cout << "double: " << val << std::endl;
+}
+
 void charprint(const double &num){
 	if (num < 0 || num > 127)
 		std::cout << "char : impossible" << std::endl;
@@ -24,24 +37,24 @@ void charprint(const double &num){
 
 void intprint(const double &num){
 	if (num > std::numeric_limits<int>::max() || num < std::numeric_limits<int>::min())
-		std::cout << "int : impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
 	else
-		std::cout << "int : " << static_cast<int>(num) << std::endl;
+		std::cout << "int: " << static_cast<int>(num) << std::endl;
 
 }
 
 void floatprint(const double &num){
 	if (num > std::numeric_limits<float>::max() || num < -std::numeric_limits<float>::max())
-		std::cout << "float : impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << std::fixed << std::setprecision(1) << "float : " << static_cast<float>(num) << 'f' << std::endl;
 }
 
 void doubleprint(const double &num){
 	if (num > std::numeric_limits<double>::max() || num < -std::numeric_limits<double>::max())
-		std::cout << "double : impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
 	else
-		std::cout << "double : " << static_cast<double>(num) << std::endl;
+		std::cout << "double: " << static_cast<double>(num) << std::endl;
 }
 
 void	printconvert(const double &num)
