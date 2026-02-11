@@ -90,7 +90,7 @@ void ScalarConverter::convert(std::string literal)
 			literal[literal.length() - 1] = '\0';
 
 		double n = strtod(literal.c_str(), &end);
-
+		std::cout << "Stopped at: \"" << end << "\"\n";
 		if (*end != '\0')
 			throw std::runtime_error("error");
 		if (literal[literal.length() - 1] == '.' || literal[0] == '.')
