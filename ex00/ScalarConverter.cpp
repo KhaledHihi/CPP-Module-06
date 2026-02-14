@@ -28,7 +28,7 @@ void	helper(std::string literal)
 
 void charprint(const double &num){
 	if (num < 0 || num > 127)
-		std::cout << "char : impossible" << std::endl;
+		std::cout << "char: impossible" << std::endl;
 	else if (std::isprint(num))
         std::cout << "char: " << static_cast<char>(num) << std::endl;
 	else
@@ -47,7 +47,7 @@ void floatprint(const double &num){
 	if (num > std::numeric_limits<float>::max() || num < -std::numeric_limits<float>::max())
 		std::cout << "float: impossible" << std::endl;
 	else
-		std::cout << std::fixed << std::setprecision(1) << "float : " << static_cast<float>(num) << 'f' << std::endl;
+		std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(num) << 'f' << std::endl;
 }
 
 void doubleprint(const double &num){
@@ -90,7 +90,6 @@ void ScalarConverter::convert(std::string literal)
 			literal[literal.length() - 1] = '\0';
 
 		double n = strtod(literal.c_str(), &end);
-		std::cout << "Stopped at: \"" << end << "\"\n";
 		if (*end != '\0')
 			throw std::runtime_error("error");
 		if (literal[literal.length() - 1] == '.' || literal[0] == '.')
