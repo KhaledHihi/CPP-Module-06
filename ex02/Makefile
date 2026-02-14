@@ -2,7 +2,7 @@ NAME = Identify
 CC = c++
 flages = -Wall -Wextra -Werror -std=c++98
 
-src = main.cpp Serializer.cpp
+src = main.cpp Fun.cpp Base.cpp 
 obj = $(src:.cpp=.o)
 
 all: $(NAME)
