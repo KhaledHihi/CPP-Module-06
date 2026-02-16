@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <iostream>
+#include <string>
 
 typedef struct Data_t
 {
@@ -10,13 +11,13 @@ typedef struct Data_t
 } Data;
 
 
-class Serialization
+class Serializer
 {
 	private:
-		Serialization();
-		Serialization(const Serialization &other);
-		Serialization& operator=(const Serialization &other);
-		~Serialization();
+		Serializer();
+		Serializer(const Serializer &other);
+		Serializer& operator=(const Serializer &other);
+		~Serializer();
 	public:
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);

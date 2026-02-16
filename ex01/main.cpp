@@ -9,9 +9,9 @@ int main()
     Data* pd = &data;
 
     std::cout << "Address of data:  " << pd << "\n";
-    uintptr_t a = Serialization::serialize(pd);
+    uintptr_t a = Serializer::serialize(pd);
     std::cout << "uintptr_t value:  " << a << "\n";
-    Data* pd1 = Serialization::deserialize(a);
+    Data* pd1 = Serializer::deserialize(a);
     std::cout << "Address of data1: " << pd1 << "\n\n";
 
     std::cout << "data1.name = " << pd1->name << "\n";
